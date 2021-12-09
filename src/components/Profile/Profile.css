@@ -1,0 +1,137 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_open {
+  background-color: black;
+  opacity: 0.3;
+}
+
+.profile__main {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  margin-bottom: 80px;
+}
+
+.profile__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__field {
+  display: flex;
+  width: calc(100% - 60px);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.profile__name {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.profile__input {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  border: 0;
+}
+
+.profile__line {
+  border-bottom: 1px solid #E8E8E8;
+  width: calc(100% - 60px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.profile__save {
+  margin-top: 379px;
+  border: 0;
+  background-color: white;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile__save_open {
+  background-color: black;
+}
+
+.profile__exit {
+  margin-top: 16px;
+  margin-bottom: 40px;
+  border: 0;
+  background-color: white;
+  color: #EE3465;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile__exit_open {
+  background-color: black;
+}
+
+.profile__save:hover {
+  cursor: pointer;
+}
+
+.profile__exit:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__main {
+    margin-top: 236px;
+    margin-bottom: 96px;
+  }
+
+  .profile__field {
+    width: calc(100% - 358px);
+  }
+
+  .profile__line {
+    width: calc(100% - 358px);
+  }
+
+  .profile__save {
+    margin-top: 210px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .profile__main {
+    margin-top: 148px;
+    margin-bottom: 123px;
+  }
+
+  .profile__field {
+    width: calc(100% - 870px);
+  }
+
+  .profile__line {
+    width: calc(100% - 870px);
+  }
+
+  .profile__save {
+    margin-top: 220px;
+  }
+}

@@ -1,0 +1,66 @@
+.page404__main {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 97px;
+  text-align: center;
+  margin-top: 329px;
+  margin-bottom: 0;
+}
+
+.page404__text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.page404__link {
+  display: block;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #FF6838;
+  text-decoration: none;
+  margin-top: 284px;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .page404__main {
+    margin-top: 408px;
+    font-size: 140px;
+    line-height: 169px;
+  }
+
+  .page404__text {
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .page404__link {
+    margin-top: 184px;
+    margin-bottom: 282px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .page404__main {
+    margin-top: 246px;
+  }
+
+  .page404__link {
+    margin-bottom: 60px;
+  }
+}

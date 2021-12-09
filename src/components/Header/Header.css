@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: space-between;
+  width: calc(100% - 28px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.header_open {
+  opacity: 0.3;
+}
+
+.header__button {
+  padding: 0;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background-position: center;
+  background: url("../../images/menu.svg") 100% 100% no-repeat;
+}
+
+.header__button:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    width: calc(100% - 60px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    display: none;
+    width: calc(100% - 140px);
+  }
+
+  .header__button {
+    display: none;
+  }
+}

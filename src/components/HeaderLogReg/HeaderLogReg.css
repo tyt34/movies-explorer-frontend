@@ -1,0 +1,52 @@
+.header-log-reg {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-log-reg__logo {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 56px;
+}
+
+.header-log-reg__text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .header-log-reg__logo {
+    margin-top: 232px;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .header-log-reg {
+    width: calc(100% - 372px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header-log-reg__text {
+    margin-top: 40px;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header-log-reg {
+    width: calc(100% - 884px);
+  }
+
+  .header-log-reg__logo {
+    margin-top: 70px;
+  }  
+}

@@ -1,0 +1,79 @@
+.card {
+  max-width: 339px;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__name {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.card__line {
+  border-bottom: 1px solid #E8E8E8;
+  width: 100%;
+  margin-bottom: 6px;
+  margin-top: 25px;
+}
+
+.card__time {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #A0A0A0;
+}
+
+.card__panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card__type {
+  display: flex;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #F9F9F9; /*F9F9F9*/
+  border-radius: 36px;
+}
+
+.card__like {
+  background: url("../../../images/like.svg") 100% 100% no-repeat;
+}
+
+.card__button {
+  padding: 0;
+  border: 0;
+  width: 10px;
+  height: 9.5px;
+  margin: 8px 7px 7.5px 7px;
+}
+
+.card__dislike {
+  background: url("../../../images/dislike.svg") 100% 100% no-repeat;
+}
+
+.card__del {
+  background: url("../../../images/del.svg") 100% 100% no-repeat;
+  width: 9px;
+  height: 9px;
+}
+
+.card__button:hover {
+  cursor: pointer;
+}
+
+.card__type:hover {
+  cursor: pointer;
+}

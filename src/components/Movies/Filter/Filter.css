@@ -1,0 +1,31 @@
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 45px;
+  width: calc(100% - 172px);
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .filter {
+    width: calc(100% - 600px);
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .filter {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: flex-end;
+    width: 167px;
+    margin-top: 18px;
+  }
+}

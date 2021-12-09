@@ -1,0 +1,10 @@
+@media screen and (min-width: 1280px) {
+  .movies {
+    display: flex;
+    width: calc(100% - 140px);
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    margin-top: 154px;
+  }
+}

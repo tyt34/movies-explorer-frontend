@@ -1,0 +1,143 @@
+.techs {
+  background-color: #F5F5F5
+}
+
+.techs__descr {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 28px;
+  margin-top: 70px;
+  width: calc(100% - 36px);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+}
+
+.techs__line {
+  border-bottom: 1px solid black;
+  height: 1px;
+  width: calc(100% - 36px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.techs__main {
+  width: calc(100% - 36px);
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.techs__text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  width: calc(100% - 36px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.techs__point {
+  background-color: #E8E8E8;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px;
+  width: 84px;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.techs__skils {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  max-width: 180px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+@media screen and (min-width: 768px) {
+  .techs {
+    height: 567px;
+  }
+
+  .techs__descr {
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 23px;
+    margin-top: 90px;
+    width: calc(100% - 100px);
+  }
+
+  .techs__line {
+    width: calc(100% - 100px);
+  }
+
+  .techs__main {
+    font-size: 50px;
+    line-height: 58px;
+    margin-top: 80px;
+    margin-bottom: 22px;
+  }
+
+  .techs__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .techs__skils {
+    grid-template-columns: repeat(7, 1fr);
+    max-width: 100%;
+    width: calc(100% - 120px);
+    margin-top: 83px;
+    margin-bottom: 90px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .techs {
+    height: 625px;
+  }
+
+  .techs__descr {
+    margin-bottom: 23px;
+    padding-top: 100px;
+    width: calc(100% - 140px);
+  }
+
+  .techs__line {
+    width: calc(100% - 140px);
+  }
+
+  .techs__main {
+    margin-top: 90px;
+    margin-bottom: 26px;
+  }
+
+  .techs__skils {
+    width: calc(100% - 590px);
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
