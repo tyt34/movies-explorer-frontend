@@ -9,6 +9,7 @@ function HeaderLogReg(props) {
           className="header-log-reg__logo"
           alt="логотип"
           src={promo__img}
+          onClick={props.isRelo}
         />
         <h1 className="header-log-reg__text">
           {props.text}

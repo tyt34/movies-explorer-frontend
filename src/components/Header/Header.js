@@ -10,6 +10,7 @@ function Header(props) {
           className="header__logo"
           alt="логотип"
           src={promo__img}
+          onClick={props.isRelo}
         />
         <button
           className="header__button"

@@ -3,6 +3,7 @@ import icon_user from "../../images/icon_user.svg"
 import promo__img from "../../images/logo_main.svg"
 
 function Navigation(props) {
+  console.log(props.isOpen);
 
   return (
     <>
@@ -14,6 +15,7 @@ function Navigation(props) {
           className="navigation__logo"
           alt="логотип"
           src={promo__img}
+          onClick={props.isRelo}
         />
         <button
           className="navigation__button"
@@ -42,8 +44,11 @@ function Navigation(props) {
           </p>
         </div>
       </section>
+      <section
+        className={props.isOpen ? "over__open over" : "over"}
+      >
+      </section>
     </>
-
   );
 }
 

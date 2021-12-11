@@ -3,11 +3,12 @@ import HeaderLogReg from '../HeaderLogReg/HeaderLogReg'
 import FormLogin from '../FormLogin/FormLogin'
 
 
-function Login() {
+function Login(props) {
   return (
     <>
       <HeaderLogReg
         text='Рады видеть!'
+        isRelo={props.isRelo}
       />
       <FormLogin
         name='Имя'

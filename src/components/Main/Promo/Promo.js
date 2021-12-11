@@ -4,10 +4,19 @@ import illustration__img from "../../../images/landing-logo.svg"
 
 
 function Promo() {
+  function handleRelocation() {
+    window.location.href = "/"
+  }
+  
   return (
     <>
       <section className="promo">
-        <img className="promo__img" alt="логотип" src={promo__img}/>
+        <img
+          className="promo__img"
+          alt="логотип"
+          src={promo__img}
+          onClick={handleRelocation}
+        />
         <div className="promo__navigation">
           <a href="/signup" className="promo__signin">
             Регистрация
@@ -20,7 +29,7 @@ function Promo() {
           </a>
         </div>
       </section>
-      
+
       <section className="illustration">
         <img
           className="illustration__img"

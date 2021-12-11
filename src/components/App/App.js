@@ -20,33 +20,44 @@ function App() {
     setPopupMenu(!popupMenu);
   }
 
+  function handleRelocation() {
+    window.location.href = "/"
+  }
+
+  /*
   if (popupMenu === true) {
     document.getElementById('root').style.backgroundColor='gray'
   } else {
     document.getElementById('root').style.backgroundColor='white'
   }
-
+  */
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/signin" element={
           <>
-            <Login />
+            <Login
+              isRelo={handleRelocation}
+            />
           </>
         } />
         <Route path="/signup" element={
           <>
-            <Register />
+            <Register
+              isRelo={handleRelocation}
+            />
           </>
         } />
         <Route path="/profile" element={
           <>
             <Header
               isMenu={handleMenu}
+              isRelo={handleRelocation}
             />
             <Navigation
               isOpen={popupMenu}
               isMenu={handleMenu}
+              isRelo={handleRelocation}
             />
             <Profile />
           </>
@@ -55,10 +66,12 @@ function App() {
           <>
             <Header
               isMenu={handleMenu}
+              isRelo={handleRelocation}
             />
             <Navigation
               isOpen={popupMenu}
               isMenu={handleMenu}
+              isRelo={handleRelocation}
             />
             <SavedMovies />
             <Footer />
@@ -68,10 +81,12 @@ function App() {
           <>
             <Header
               isMenu={handleMenu}
+              isRelo={handleRelocation}
             />
             <Navigation
               isOpen={popupMenu}
               isMenu={handleMenu}
+              isRelo={handleRelocation}
             />
             <Movies />
             <Footer />

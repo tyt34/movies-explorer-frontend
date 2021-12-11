@@ -20,6 +20,10 @@
   margin-bottom: 80px;
 }
 
+.header-log-reg__logo:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .header-log-reg__logo {
     margin-top: 232px;
@@ -48,5 +52,5 @@
 
   .header-log-reg__logo {
     margin-top: 70px;
-  }  
+  }
 }

@@ -24,6 +24,10 @@
   width: 80%;
 }
 
+.search-focus {
+  border: 1.5px solid black;
+}
+
 .search__input {
   background-image: url("../../../images/find.svg");
   padding: 0;
@@ -37,6 +41,11 @@
   margin-right: 7px;
 }
 
+.search__input:focus {
+  width: 34px;
+  height: 34px;
+  background-image: url("../../../images/find_f.svg");
+}
 
 @media screen and (min-width: 768px) {
   .search {
