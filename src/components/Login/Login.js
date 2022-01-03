@@ -8,7 +8,6 @@ function Login(props) {
     <>
       <HeaderLogReg
         text='Рады видеть!'
-        isRelo={props.isRelo}
       />
       <FormLogin
         name='Имя'

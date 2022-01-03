@@ -4,7 +4,6 @@ import * as filter from '../../../utils/utils'
 
 function SearchForm(props) {
   const [focus, setFocus] = React.useState(false)
-  const [select, setSelect] = React.useState(false)
   console.log();
 
   React.useEffect( () => {
@@ -17,10 +16,6 @@ function SearchForm(props) {
       props.setCards(filter.filter(arrMount, localStorage.film, props.check))
     }
   }, [])
-
-  React.useEffect( () => {
-    console.log(' -> ', select);
-  }, [select])
 
   function handleChangeFilm(e) {
     props.setFilm(e.target.value)

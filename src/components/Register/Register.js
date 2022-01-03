@@ -7,7 +7,6 @@ function Register(props) {
     <>
       <HeaderLogReg
         text='Добро пожаловать!'
-        isRelo={props.isRelo}
       />
       <FormRegister
         name='Имя'

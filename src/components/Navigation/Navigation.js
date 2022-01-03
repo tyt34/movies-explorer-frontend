@@ -38,7 +38,6 @@ function Navigation(props) {
           className="navigation__logo"
           alt="логотип"
           src={promo__img}
-          onClick={props.isRelo}
         />
         <button
           className="navigation__button"

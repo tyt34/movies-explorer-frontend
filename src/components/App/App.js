@@ -27,10 +27,6 @@ function App() {
     setPopupMenu(!popupMenu)
   }
 
-  function handleRelocation() {
-    window.location.href = "/"
-  }
-
   return ( // BrowserRouter он вообще нужен?
     <CurrentUserContext.Provider value={currentUser}>
       <BrowserRouter>
@@ -38,7 +34,6 @@ function App() {
           <Route path="/signin" element={
             <>
               <Login
-                isRelo={handleRelocation}
                 user={currentUser}
                 setUser={setCurrentUser}
                 setLoggedIn={setLoggedIn}
@@ -48,7 +43,6 @@ function App() {
           <Route path="/signup" element={
             <>
               <Register
-                isRelo={handleRelocation}
                 setLoggedIn={setLoggedIn}
               />
             </>
@@ -58,13 +52,11 @@ function App() {
               <ProtectedRoute redirectTo="/" loggedIn={loggedIn}>
                 <Header
                   isMenu={handleMenu}
-                  isRelo={handleRelocation}
                 />
                 <Navigation
                   isOpen={popupMenu}
                   setPopupMenu={setPopupMenu}
                   isMenu={handleMenu}
-                  isRelo={handleRelocation}
                 />
                 <Profile
                   setLoggedIn={setLoggedIn}
@@ -77,13 +69,11 @@ function App() {
               <ProtectedRoute redirectTo="/" loggedIn={loggedIn}>
                 <Header
                   isMenu={handleMenu}
-                  isRelo={handleRelocation}
                 />
                 <Navigation
                   isOpen={popupMenu}
                   setPopupMenu={setPopupMenu}
                   isMenu={handleMenu}
-                  isRelo={handleRelocation}
                 />
                 <SavedMovies />
                 <Footer />
@@ -98,13 +88,11 @@ function App() {
                 <ProtectedRoute redirectTo="/" loggedIn={loggedIn}>
                   <Header
                     isMenu={handleMenu}
-                    isRelo={handleRelocation}
                   />
                   <Navigation
                     isOpen={popupMenu}
                     setPopupMenu={setPopupMenu}
                     isMenu={handleMenu}
-                    isRelo={handleRelocation}
                   />
                   <Movies />
                   <Footer />
