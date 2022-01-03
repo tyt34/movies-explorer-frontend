@@ -7,7 +7,6 @@ const signup = 'signup'
 const signin = 'signin'
 const get = 'users/me'
 
-
 function getResponseData(res) {
     if (!res.ok) {
       return Promise.reject(`Ошибка: ${res.status}`)
@@ -22,7 +21,9 @@ export const sendLike = (film) => {
   if (film.nameEN === '') {
     film.nameEN = 'noname'
   }
-  if (!film.trailerLink.includes('http')) {
+  if (film.trailerLink === null) {
+    film.trailerLink = 'https://www.youtube.com/watch?v=W9RCD7gML8o&ab_channel=%D0%A2%D1%80%D0%B8%D0%B4%D0%BD%D1%8F%D0%B4%D0%BE%D0%B6%D0%B4%D1%8F'
+  } else if (!film.trailerLink.includes('http')) {
     film.trailerLink = 'https://www.youtube.com/watch?v=W9RCD7gML8o&ab_channel=%D0%A2%D1%80%D0%B8%D0%B4%D0%BD%D1%8F%D0%B4%D0%BE%D0%B6%D0%B4%D1%8F'
   }
   return fetch(url+movies, {
