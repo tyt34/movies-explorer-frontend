@@ -38,6 +38,9 @@ function Profile(props) {
     .catch( (err) => {
       console.log('err -> ', err)
     })
+
+    setTestSuccess('Редактировать, это сохранить изменения')
+    setTimeout(textSuccess, 4000)
   }, [])
 
   function testCopy(word, wordInput) {
@@ -96,7 +99,7 @@ function Profile(props) {
     }
   }
 
-  function clearSuccess() {
+  function textSuccess() {
     setTestSuccess('')
   }
 
@@ -112,7 +115,7 @@ function Profile(props) {
         } else {
           setButtonError('')
           setTestSuccess('Данные изменены')
-          setTimeout(clearSuccess, 5000)
+          setTimeout(textSuccess, 4000)
           setName(arg.name)
         }
       }
