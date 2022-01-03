@@ -135,9 +135,15 @@
   margin-right: auto;
 }
 
+@media screen and (min-width: 500px) {
+  .profile__error-button {
+    margin-top: 350px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .profile__main {
-    margin-top: 236px;
+    margin-top: 150px;
     margin-bottom: 96px;
   }
 
@@ -151,6 +157,10 @@
 
   .profile__save {
     margin-top: 210px;
+  }
+
+  .profile__error-button {
+    margin-top: 50px;
   }
 }
 
@@ -174,6 +184,5 @@
 
   .profile__error-button {
     margin-top: 200px;
-
   }
 }
