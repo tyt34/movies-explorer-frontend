@@ -4,6 +4,8 @@ import * as filter from '../../../utils/utils'
 
 function SearchForm(props) {
   const [focus, setFocus] = React.useState(false)
+  const [select, setSelect] = React.useState(false)
+  console.log();
 
   React.useEffect( () => {
     props.setCards(filter.filter(props.fullCards, props.film, props.check))
@@ -15,6 +17,10 @@ function SearchForm(props) {
       props.setCards(filter.filter(arrMount, localStorage.film, props.check))
     }
   }, [])
+
+  React.useEffect( () => {
+    console.log(' -> ', select);
+  }, [select])
 
   function handleChangeFilm(e) {
     props.setFilm(e.target.value)
@@ -28,13 +34,19 @@ function SearchForm(props) {
     setFocus(false)
   }
 
+  function handeClickOnBlock(e) {
+    document.getElementById('input').select() // пока не знаю как это сделать лучше
+  }
 
   return (
     <>
       <form
         className={focus ? "search-focus search" : "search"}
+        onClick={handeClickOnBlock}
       >
         <input
+          //ref={props.inputRef}
+          id="input"
           className="search__area"
           type="text"
           value={props.film}

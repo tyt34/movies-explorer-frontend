@@ -9,6 +9,10 @@
   margin-top: 60px;
 }
 
+.search:hover {
+  cursor: text;
+}
+
 .search__area {
   border: none;
   outline: none;

@@ -92,6 +92,7 @@ function Movies() {
           film={film}
           setFilm={setFilm}
           textErr={textErr}
+          //inputRef={(el) => {this.inputElement = el}}
         />
         <Filter
           check={check}
