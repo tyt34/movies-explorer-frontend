@@ -45,7 +45,6 @@ function SearchForm(props) {
         onClick={handeClickOnBlock}
       >
         <input
-          //ref={props.inputRef}
           id="input"
           className="search__area"
           type="text"
