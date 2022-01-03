@@ -1,4 +1,4 @@
-import './NavTab.css';
+import './NavTab.css'
 
 function NavTab() {
   return (
@@ -18,4 +18,4 @@ function NavTab() {
   )
 }
 
-export default NavTab;
+export default NavTab

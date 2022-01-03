@@ -47,6 +47,27 @@
   background-image: url("../../../images/find_f.svg");
 }
 
+.search__text{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search__error {
+  display: block;
+  width: calc(100% - 30px);
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
+  margin-top: 10px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  height: 15px;
+}
+
 @media screen and (min-width: 768px) {
   .search {
     width: calc(100% - 60px);
@@ -54,6 +75,10 @@
 
   .search__area{
     font-size: 14px;
+  }
+
+  .search__error {
+    width: calc(100% - 60px);
   }
 }
 

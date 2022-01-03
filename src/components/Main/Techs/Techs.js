@@ -1,4 +1,4 @@
-import './Techs.css';
+import './Techs.css'
 
 
 function Techs() {
@@ -28,4 +28,4 @@ function Techs() {
   )
 }
 
-export default Techs;
+export default Techs

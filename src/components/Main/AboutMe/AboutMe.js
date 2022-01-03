@@ -1,4 +1,4 @@
-import './AboutMe.css';
+import './AboutMe.css'
 import ava_student from "../../../images/ava_student.jpg"
 
 
@@ -40,7 +40,7 @@ function AboutMe() {
         </div>
       </section>
     </>
-  );
+  )
 }
 
-export default AboutMe;
+export default AboutMe

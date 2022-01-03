@@ -1,17 +1,20 @@
-import './Filter.css';
-import CheckBox from '../CheckBox/CheckBox';
+import './Filter.css'
+import CheckBox from '../CheckBox/CheckBox'
 
 
-function Filter() {
+function Filter(props) {
   return (
     <>
       <div className="filter">
         Короткометражки
-        <CheckBox />
+        <CheckBox
+          check={props.check}
+          setCheck={props.setCheck}
+        />
       </div>
     </>
 
-  );
+  )
 }
 
-export default Filter;
+export default Filter

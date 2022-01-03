@@ -1,15 +1,22 @@
-import './CheckBox.css';
+import React from 'react'
+import './CheckBox.css'
 
-function CheckBox() {
+function CheckBox(props) {
+  function handleCheck(e) {
+    props.setCheck(!props.check)
+  }
+
   return (
     <section
-     className="check"
+      className="check"
     >
       <input
         type="checkbox"
         className="check-checkbox"
         name="toggleSwitch"
         id="toggleSwitch"
+        checked={props.check}
+        onChange={handleCheck}
       />
         <label
           className="check-label"
@@ -24,7 +31,7 @@ function CheckBox() {
           </span>
         </label>
     </section>
-  );
+  )
 }
 
-export default CheckBox;
+export default CheckBox

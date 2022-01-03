@@ -1,4 +1,4 @@
-import './HeaderLogReg.css';
+import './HeaderLogReg.css'
 import promo__img from "../../images/logo_main.svg"
 
 function HeaderLogReg(props) {
@@ -17,7 +17,7 @@ function HeaderLogReg(props) {
       </section>
     </>
 
-  );
+  )
 }
 
-export default HeaderLogReg;
+export default HeaderLogReg

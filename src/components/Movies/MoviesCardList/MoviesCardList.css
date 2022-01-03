@@ -16,7 +16,7 @@
 }
 
 .list__but {
-  display: flex;
+  display: none;
   justify-content: center;
   height: 36px;
   width: calc(100% - 80px);
@@ -27,7 +27,6 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  display: flex;
   align-items: center;
   color: #000000;
   background: #F9F9F9;
@@ -36,6 +35,10 @@
   margin-top: 50px;
   margin-bottom: 80px;
   border: 1px;
+}
+
+.list__but-open {
+  display: flex;
 }
 
 @media screen and (min-width: 768px) {

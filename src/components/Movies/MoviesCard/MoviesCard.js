@@ -1,21 +1,39 @@
 import React from 'react'
-import './MoviesCard.css';
+import './MoviesCard.css'
 
 function MoviesCard(props) {
-  const [isLike, setIsLike] = React.useState(false);
+  const [isLike, setIsLike] = React.useState('')
+
+  React.useEffect( () => {
+    function getLike() {
+      return props.savedFilms.some((i) => {
+        return i.movieId === props.num
+      })
+    }
+    setIsLike(getLike())
+  }, [props.savedFilms])
+
+  let isLiked = props.savedFilms.some((i) => {
+    return i.movieId === props.num
+  })
 
   let cardLikeOrDel
 
   function handleLikeClick() {
-    setIsLike(!isLike);
+    setIsLike(!isLike)
+    props.onCardLike(props, isLike)
   }
 
   if (props.typePageMovies === true) {
     cardLikeOrDel = `${
       isLike ? "card__button card__like" : "card__button card__dislike"
-    }`;
+    }`
   } else {
     cardLikeOrDel = `${"card__button card__del"}`
+  }
+
+  function relocateOnTrailer() {
+    window.open(props.trailer)
   }
 
   return (
@@ -25,6 +43,7 @@ function MoviesCard(props) {
           className="card__img"
           alt="логотип"
           src={props.img}
+          onClick={relocateOnTrailer}
         />
         <div className="card__panel">
           <span
@@ -53,7 +72,7 @@ function MoviesCard(props) {
         </span>
       </section>
     </>
-  );
+  )
 }
 
-export default MoviesCard;
+export default MoviesCard

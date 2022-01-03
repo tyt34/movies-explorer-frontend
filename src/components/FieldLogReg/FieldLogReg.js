@@ -1,4 +1,4 @@
-import './FieldLogReg.css';
+import './FieldLogReg.css'
 
 function FieldLogReg(props) {
   return (
@@ -14,18 +14,20 @@ function FieldLogReg(props) {
           minLength="2"
           maxLength="30"
           type={props.typeInput}
+          value={props.value}
+          onChange={props.onChange}
           required
         />
         <span
           id={`field-log-reg-${props.idName}-err`}
           className="field-log-reg__error"
         >
-          Временный текст ошибки
+          {props.textInputErr}
         </span>
       </div>
     </>
 
-  );
+  )
 }
 
-export default FieldLogReg;
+export default FieldLogReg

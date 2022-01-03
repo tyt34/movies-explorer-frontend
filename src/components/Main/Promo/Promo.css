@@ -6,11 +6,16 @@
 }
 
 .promo__navigation {
-  display: flex;
+  /*display: flex;*/
+  display: none;
   margin-right: 14px;
   margin-top: 24px;
   align-items: center;
   height: 26px;
+}
+
+.promo_open {
+  display: flex;
 }
 
 .promo__img {
@@ -76,6 +81,10 @@
 
 .promo__img:hover {
   cursor: pointer;
+}
+
+.promo__signin:hover {
+  color: red;
 }
 
 @media screen and (min-width: 768px) {

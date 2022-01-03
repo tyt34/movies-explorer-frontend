@@ -1,4 +1,4 @@
-import './Portfolio.css';
+import './Portfolio.css'
 
 function Portfolio() {
   return (
@@ -12,7 +12,7 @@ function Portfolio() {
             Статичный сайт
           </p>
           <p className="portfolio__arrow">
-            <a href="https://github.com/tyt34/github.io" class="portfolio__forward">
+            <a href="https://github.com/tyt34/github.io" className="portfolio__forward">
               ↗
             </a>
           </p>
@@ -23,7 +23,7 @@ function Portfolio() {
             Адаптивный сайт
           </p>
           <p className="portfolio__arrow">
-            <a href="https://github.com/tyt34/russian-travel" class="portfolio__forward">
+            <a href="https://github.com/tyt34/russian-travel" className="portfolio__forward">
               ↗
             </a>
           </p>
@@ -34,15 +34,14 @@ function Portfolio() {
             Одностраничное приложение
           </p>
           <p className="portfolio__arrow">
-            <a href="http://good.nomoredomains.work/sign-in" class="portfolio__forward">
+            <a href="http://good.nomoredomains.work/sign-in" className="portfolio__forward">
               ↗
             </a>
           </p>
         </div>
       </nav>
     </>
-
-  );
+  )
 }
 
-export default Portfolio;
+export default Portfolio

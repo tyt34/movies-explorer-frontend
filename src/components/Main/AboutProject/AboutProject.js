@@ -1,4 +1,4 @@
-import './AboutProject.css';
+import './AboutProject.css'
 
 
 function AboutProject() {
@@ -59,7 +59,7 @@ function AboutProject() {
         </div>
       </section>
     </>
-  );
+  )
 }
 
-export default AboutProject;
+export default AboutProject

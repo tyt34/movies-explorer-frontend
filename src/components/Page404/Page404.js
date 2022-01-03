@@ -1,4 +1,4 @@
-import './Page404.css';
+import './Page404.css'
 
 function Page404() {
   return (
@@ -15,8 +15,7 @@ function Page404() {
         </a>
       </section>
     </>
-
-  );
+  )
 }
 
-export default Page404;
+export default Page404

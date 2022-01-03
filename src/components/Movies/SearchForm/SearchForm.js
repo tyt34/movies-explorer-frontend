@@ -1,14 +1,23 @@
 import React from 'react'
-import './SearchForm.css';
+import './SearchForm.css'
+import * as filter from '../../../utils/utils'
 
-function SearchForm() {
-  const [film, setFilm] = React.useState('')
+function SearchForm(props) {
   const [focus, setFocus] = React.useState(false)
 
+  React.useEffect( () => {
+    props.setCards(filter.filter(props.fullCards, props.film, props.check))
+  }, [props.check])
+
+  React.useEffect( () => {
+    if (localStorage.cards !== undefined) {
+      let arrMount = JSON.parse(localStorage.cards)
+      props.setCards(filter.filter(arrMount, localStorage.film, props.check))
+    }
+  }, [])
 
   function handleChangeFilm(e) {
-    setFilm(e.target.value);
-    console.log(film);
+    props.setFilm(e.target.value)
   }
 
   function handeFocus() {
@@ -19,6 +28,7 @@ function SearchForm() {
     setFocus(false)
   }
 
+
   return (
     <>
       <form
@@ -27,7 +37,7 @@ function SearchForm() {
         <input
           className="search__area"
           type="text"
-          value={film}
+          value={props.film}
           onChange={handleChangeFilm}
           onFocus={handeFocus}
           onBlur={handeBlur}
@@ -37,16 +47,19 @@ function SearchForm() {
           type="submit"
           className="search__input"
           value=""
+          onClick={props.handleSearch}
         >
         </input>
       </form>
+      <div className="search__text">
+        <span
+          className="search__error"
+        >
+          {props.textErr}
+        </span>
+      </div>
     </>
-
-  );
+  )
 }
 
-export default SearchForm;
-
-/*
-
-*/
+export default SearchForm

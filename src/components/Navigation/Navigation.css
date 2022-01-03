@@ -50,7 +50,7 @@
   height: 30px;
   margin-left: auto;
 }
-
+/*
 .navigation__main {
   font-family: Inter;
   font-style: normal;
@@ -60,10 +60,14 @@
   text-align: center;
   margin-top: 100px;
 }
-
+*/
 .navigation__links {
   display: flex;
   flex-direction: column;
+}
+
+.navigation__link:first-child {
+  margin-top: 100px;
 }
 
 .navigation__link {
@@ -85,6 +89,7 @@
 .navigation__link:hover {
   border-bottom: 2px solid black;
   padding-bottom: 7px;
+  cursor: pointer;
 }
 
 .navigation__user {
@@ -97,6 +102,10 @@
   margin-right: auto;
   margin-top: 444px;
   margin-bottom: 46px;
+}
+
+.navigation__user:hover {
+  cursor: pointer;
 }
 
 .navigation__ico {
@@ -197,6 +206,7 @@
 
   .navigation__links {
     margin-top: 10px;
+    display: block;
     flex-direction: row;
   }
 }
