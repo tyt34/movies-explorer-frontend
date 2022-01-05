@@ -1,7 +1,7 @@
 import {
   pageWithImgs
 } from './constants.js'
-const url = 'http://localhost:3001/'
+const url = 'https://submarine.nomoredomains.work/'
 const movies = 'movies'
 const signup = 'signup'
 const signin = 'signin'
