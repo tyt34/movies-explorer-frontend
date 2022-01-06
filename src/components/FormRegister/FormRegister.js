@@ -96,6 +96,7 @@ function FormRegister(props) {
         api.auth(email, pass)
         .then( (data) => {
           if (data.status === 'ok') {
+            localStorage.clear()
             localStorage.setItem('jwt', data.token)
             props.setLoggedIn(true)
             navigate('/movies')
