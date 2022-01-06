@@ -14,6 +14,7 @@ function Register(props) {
         textDown='Уже зарегистрированы?'
         textLink='Войти'
         setLoggedIn={props.setLoggedIn}
+        setUser={props.setUser}
       />
     </>
 

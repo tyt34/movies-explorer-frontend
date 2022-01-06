@@ -99,6 +99,10 @@ function FormRegister(props) {
             localStorage.clear()
             localStorage.setItem('jwt', data.token)
             props.setLoggedIn(true)
+            props.setUser({
+              name: name,
+              email: email,
+            })
             navigate('/movies')
           } else {
             throw data

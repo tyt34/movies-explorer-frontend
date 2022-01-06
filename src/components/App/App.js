@@ -70,6 +70,7 @@ function App() {
             >
               <Register
                 setLoggedIn={setLoggedIn}
+                setUser={setCurrentUser}
               />
             </ProtectedRoute>
           } />
