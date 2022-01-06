@@ -101,7 +101,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 444px;
-  margin-bottom: 70px;
+  /*margin-bottom: 70px;*/
+  margin-bottom: 156px;
 }
 
 .navigation__user:hover {
