@@ -15,7 +15,7 @@ function HeaderLogReg(props) {
       <section className="header-log-reg">
         <img
           className="header-log-reg__logo"
-          alt="логотип"
+          alt="Логотип сайта"
           src={promo__img}
           onClick={handleLinkMain}
         />

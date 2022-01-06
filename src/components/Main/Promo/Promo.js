@@ -56,7 +56,7 @@ function Promo(props) {
       <section className="promo">
         <img
           className="promo__img"
-          alt="логотип"
+          alt="Логотип сайта"
           src={promo__img}
           onClick={handleLinkMain}
 

@@ -23,31 +23,6 @@ function SavedMovies() {
   const [film, setFilm] = React.useState('')
   const [textErr, setTextErr] = React.useState('')
 
-  function updateSavedFilms() {
-    api.getSavedFilms()
-    .then( (res) => {
-      setCardsSave(res.data)
-      setFindCard(res.data)
-    })
-    .catch(
-      (err) => {
-        console.log('1 Ошибка ===> ', err)
-      }
-    )
-  }
-
-  function updateFilms() {
-    api.getSavedFilms()
-    .then( (res) => {
-      setCardsSave(res.data)
-    })
-    .catch(
-      (err) => {
-        console.log('1 Ошибка ===> ', err)
-      }
-    )
-  }
-
   React.useEffect( () => {
     updateSavedFilms()
   }, [])
@@ -78,6 +53,32 @@ function SavedMovies() {
       updateSavedFilms()
     }
   }, [check])
+
+  function updateFilms() {
+    api.getSavedFilms()
+    .then( (res) => {
+      console.log(res.data);
+      setCardsSave(res.data)
+    })
+    .catch(
+      (err) => {
+        console.log('1 Ошибка ===> ', err)
+      }
+    )
+  }
+
+  function updateSavedFilms() {
+    api.getSavedFilms()
+    .then( (res) => {
+      setCardsSave(res.data)
+      setFindCard(res.data)
+    })
+    .catch(
+      (err) => {
+        console.log('1 Ошибка ===> ', err)
+      }
+    )
+  }
 
   return (
     <>
@@ -115,9 +116,7 @@ function SavedMovies() {
         setCards={setCardsSave}
         savedFilms={cardsSave}
         setFindCard={setFindCard}
-        updateSaved={updateSavedFilms}
         check={check}
-        updateFilms={updateFilms}
       />
     </>
   )

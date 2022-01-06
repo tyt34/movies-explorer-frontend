@@ -9,6 +9,10 @@
   background-size: contain;
 }
 
+.card__img:hover {
+  cursor: pointer;
+}
+
 .card__name {
   font-family: Inter;
   font-style: normal;

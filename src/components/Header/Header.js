@@ -16,7 +16,7 @@ function Header(props) {
     <section className={props.isOpen ? "header header_open" : "header"}>
         <img
           className="header__logo"
-          alt="логотип"
+          alt="Логотип сайта"
           src={promo__img}
           onClick={handleLinkMain}
         />

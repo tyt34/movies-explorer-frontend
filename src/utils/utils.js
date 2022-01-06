@@ -1,3 +1,5 @@
+const constants = require('./constants.js');
+
 function filter(obj, text, check) {
   let arr = []
   for (let i=0; i<obj.length; i++) {
@@ -9,7 +11,7 @@ function filter(obj, text, check) {
 function addOrNot(obj, text, arr, check) {
   let needDuration
   if (check) {
-    needDuration = 40
+    needDuration = constants.duraShortFilm
   } else {
     needDuration = Infinity // бесконечность
   }

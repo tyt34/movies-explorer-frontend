@@ -4,7 +4,6 @@ import * as filter from '../../../utils/utils'
 
 function SearchForm(props) {
   const [focus, setFocus] = React.useState(false)
-  console.log();
 
   React.useEffect( () => {
     props.setCards(filter.filter(props.fullCards, props.film, props.check))
@@ -13,7 +12,9 @@ function SearchForm(props) {
   React.useEffect( () => {
     if (localStorage.cards !== undefined) {
       let arrMount = JSON.parse(localStorage.cards)
-      props.setCards(filter.filter(arrMount, localStorage.film, props.check))
+      props.setCards(filter.filter(arrMount, localStorage.film, localStorage.check))
+      // отображение фильмов при заходе на страницу
+      // если до этого производился поиск
     }
   }, [])
 
@@ -30,7 +31,7 @@ function SearchForm(props) {
   }
 
   function handeClickOnBlock(e) {
-    document.getElementById('input').select() // пока не знаю как это сделать лучше
+    document.getElementById('input').select()
   }
 
   return (

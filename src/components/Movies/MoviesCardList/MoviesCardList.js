@@ -10,7 +10,11 @@ import {
   medCardsOnPage,
   bigCardsOnPage,
   hugeCardsOnPage,
-  pageWithImgs
+  pageWithImgs,
+  addSmallCardsOnPage,
+  addMedCardsOnPage,
+  addBigCardsOnPage,
+  addHugeCardsOnPage,
 } from '../../../utils/constants.js'
 
 function MoviesCardList(props) {
@@ -51,7 +55,7 @@ function MoviesCardList(props) {
     }
   }, [width])
 
-  React.useEffect( () => { // пока что не знаю к чему это привязать
+  React.useEffect( () => {
     let cardOnPage = document.getElementsByClassName('card').length
     if (cardOnPage < props.cards.length) {
       setButAdd(true)
@@ -62,13 +66,13 @@ function MoviesCardList(props) {
 
   function handleAdd() {
     if (width < smallScreen) {
-      setNum(num+2)
+      setNum(num + addSmallCardsOnPage)
     } else if (width < medScreen) {
-      setNum(num+2)
+      setNum(num + addMedCardsOnPage)
     } else if (width < bigScreen) {
-      setNum(num+3)
+      setNum(num + addBigCardsOnPage)
     } else {
-      setNum(num+4)
+      setNum(num + addHugeCardsOnPage)
     }
   }
 
@@ -106,40 +110,49 @@ function MoviesCardList(props) {
     }
   }
 
+  function changeFindCards(needCard) {
+    let arr = props.cards
+    for(let i=0; i < props.cards.length; i++) {
+       if(props.cards[i]._id === needCard[0]._id) {
+         arr.splice(i,1)
+         props.setFindCard([...arr])
+       }
+    }
+  }
+
+  function changeSavedCards(needCard) {
+    let arr = props.savedFilms
+    for(let i=0; i < props.cards.length; i++) {
+       if(props.cards[i]._id === needCard[0]._id) {
+         arr.splice(i,1)
+         props.setSavedFilms([...arr])
+       }
+    }
+  }
+
   function handleCardLikeDislike(film, isLike) {
     let needCard
-    if (nowUrl[nowUrl.length-1] === 'saved-movies') {
+    if (nowUrl[nowUrl.length-1] === 'saved-movies') { // saved-movies
       needCard = props.savedFilms.filter( (card) => {
         if (card.movieId === film.num) return card
       })
       api.delLike(needCard[0]._id)
       .then( (newFilm) => {
-        if (props.check) {
-          let arr = props.cards
-          for(let i=0; i < props.cards.length; i++) {
-             if(props.cards[i]._id === needCard[0]._id) {
-               arr.splice(i,1)
-               props.setFindCard(arr)
-             }
-          }
-          props.updateFilms()
-        } else {
-          props.updateSaved()
-        }
+        changeFindCards(needCard)
       })
       .catch(
         (err) => {
           console.log('1 Ошибка ===> ', err)
         }
       )
-    } else {
+    } else { /////////////////////////////////////////// movies
       if (isLike) {
         needCard = props.savedFilms.filter( (card) => {
           if (card.movieId === film.num) return card
         })
         api.delLike(needCard[0]._id)
         .then( (newFilm) => {
-          props.updateSaved()
+          changeSavedCards(needCard)
         })
         .catch(
           (err) => {
@@ -147,12 +160,17 @@ function MoviesCardList(props) {
           }
         )
       } else if (!isLike) {
+        let arr = props.savedFilms
         needCard = props.cards.filter( (card) => {
           if (card.id === film.num) return card
         })
         api.sendLike(needCard[0])
         .then( (newFilm) => {
+          arr.push(needCard[0])
+          props.setSavedFilms(arr)
           props.updateSaved()
+          // пока не понимаю, как можно убрать лайк не получая _id,
+          // которое получается только с данными от сервера
         })
         .catch(
           (err) => {
@@ -161,7 +179,6 @@ function MoviesCardList(props) {
         )
       }
     }
-
   }
 
   function searchImg(card) {
@@ -199,7 +216,7 @@ function MoviesCardList(props) {
           props.cards.slice(0, num).map( (card, i) =>
             (
               <MoviesCard
-                key={i}
+                key={searchID(card)}
                 img={searchImg(card)}
                 name={card.nameRU}
                 time={changeTime(card.duration)}
@@ -209,6 +226,7 @@ function MoviesCardList(props) {
                 savedFilms={props.savedFilms}
                 setSavedFilms={props.setSavedFilms}
                 trailer={searchTrailer(card)}
+                title={card.description}
               />
             )
           )

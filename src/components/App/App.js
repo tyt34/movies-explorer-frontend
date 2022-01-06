@@ -13,7 +13,7 @@ import Register from '../Register/Register'
 import Footer from '../Footer/Footer'
 import CurrentUserContext from '../../contexts/CurrentUserContext'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
-
+import * as api from '../../utils/MainApi.js'
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({
@@ -27,29 +27,59 @@ function App() {
     setPopupMenu(!popupMenu)
   }
 
-  return ( // BrowserRouter он вообще нужен?
+  React.useEffect( () => {
+    api.getUser()
+    .then(
+      (arg) => {
+        setCurrentUser(
+          {
+            name: arg.data.name,
+            email: arg.data.email
+          }
+        )
+        setLoggedIn(true)
+      }
+    )
+    .catch( (err) => {
+      console.log('err -> ', err)
+    })
+  }, [])
+
+  return (
     <CurrentUserContext.Provider value={currentUser}>
       <BrowserRouter>
         <Routes>
           <Route path="/signin" element={
-            <>
+            <ProtectedRoute
+              redirectTo="/movies"
+              loggedIn={loggedIn}
+              acces='green'
+            >
               <Login
                 user={currentUser}
                 setUser={setCurrentUser}
                 setLoggedIn={setLoggedIn}
               />
-            </>
+            </ProtectedRoute>
           } />
           <Route path="/signup" element={
-            <>
+            <ProtectedRoute
+              redirectTo="/movies"
+              loggedIn={loggedIn}
+              acces='green'
+            >
               <Register
                 setLoggedIn={setLoggedIn}
               />
-            </>
+            </ProtectedRoute>
           } />
           <Route path="/profile" element={
             <>
-              <ProtectedRoute redirectTo="/" loggedIn={loggedIn}>
+              <ProtectedRoute
+                redirectTo="/"
+                loggedIn={loggedIn}
+                acces='red'
+              >
                 <Header
                   isMenu={handleMenu}
                 />
@@ -66,7 +96,11 @@ function App() {
           } />
           <Route path="/saved-movies" element={
             <>
-              <ProtectedRoute redirectTo="/" loggedIn={loggedIn}>
+              <ProtectedRoute
+                redirectTo="/"
+                loggedIn={loggedIn}
+                acces='red'
+              >
                 <Header
                   isMenu={handleMenu}
                 />
@@ -85,7 +119,11 @@ function App() {
             loggedIn={loggedIn}
             element={
               <>
-                <ProtectedRoute redirectTo="/" loggedIn={loggedIn}>
+                <ProtectedRoute
+                  redirectTo="/"
+                  loggedIn={loggedIn}
+                  acces='red'
+                >
                   <Header
                     isMenu={handleMenu}
                   />

@@ -12,6 +12,7 @@ import {
   infoAboutErName,
   infoAboutErEmail
 } from '../../utils/constants.js'
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Profile(props) {
   const navigate = useNavigate()
@@ -24,24 +25,24 @@ function Profile(props) {
   const [nameError, setNameError] = React.useState('')
   const [emailError, setEmailError] = React.useState('')
   const [testSuccess, setTestSuccess] = React.useState('')
+  const currenUser = React.useContext(CurrentUserContext);
 
   React.useEffect( () => {
-    api.getUser()
-    .then(
-      (arg) => {
-        setNameInput(arg.data.name)
-        setName(arg.data.name)
-        setEmailInput(arg.data.email)
-        setEmail(arg.data.email)
-      }
-    )
-    .catch( (err) => {
-      console.log('err -> ', err)
-    })
-
+    setNameInput(currenUser.name)
+    setName(currenUser.name)
+    setEmailInput(currenUser.email)
+    setEmail(currenUser.email)
     setTestSuccess('Редактировать, это сохранить изменения')
     setTimeout(textSuccess, 4000)
+    setTimeout(clearErr, 1)
   }, [])
+
+  React.useEffect( () => {
+    setNameInput(currenUser.name)
+    setName(currenUser.name)
+    setEmailInput(currenUser.email)
+    setEmail(currenUser.email)
+  }, [currenUser.name])
 
   function testCopy(word, wordInput) {
     if (wordInput === word) {
@@ -101,6 +102,10 @@ function Profile(props) {
 
   function textSuccess() {
     setTestSuccess('')
+  }
+
+  function clearErr() {
+    setNameError('')
   }
 
   function onSubmit(e) {

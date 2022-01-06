@@ -38,6 +38,7 @@ function Navigation(props) {
           className="navigation__logo"
           alt="логотип"
           src={promo__img}
+          onClick={handleLinkMain}
         />
         <button
           className="navigation__button"

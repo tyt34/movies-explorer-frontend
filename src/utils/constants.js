@@ -23,10 +23,15 @@ const smallCardsOnPage = 5
 const medCardsOnPage = 8
 const bigCardsOnPage = 9
 const hugeCardsOnPage = 12
+const addSmallCardsOnPage = 2
+const addMedCardsOnPage = 2
+const addBigCardsOnPage = 3
+const addHugeCardsOnPage = 4
 const pageWithImgs = 'https://api.nomoreparties.co'
 const textForLoading = 'Загрузка...'
 const textForExampleEmail = 'example@nemail.su'
-
+const numFirstDot = 60
+const duraShortFilm = 40
 
 module.exports.trueEmail = trueEmail
 module.exports.trueName = trueName
@@ -48,3 +53,9 @@ module.exports.hugeCardsOnPage = hugeCardsOnPage
 module.exports.pageWithImgs = pageWithImgs
 module.exports.textForLoading = textForLoading
 module.exports.textForExampleEmail = textForExampleEmail
+module.exports.numFirstDot = numFirstDot
+module.exports.duraShortFilm = duraShortFilm
+module.exports.addSmallCardsOnPage = addSmallCardsOnPage
+module.exports.addMedCardsOnPage = addMedCardsOnPage
+module.exports.addBigCardsOnPage = addBigCardsOnPage
+module.exports.addHugeCardsOnPage = addHugeCardsOnPage

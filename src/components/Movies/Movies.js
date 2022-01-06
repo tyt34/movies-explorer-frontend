@@ -20,7 +20,6 @@ function Movies() {
   const [instead, setInstead] = React.useState(true)
   const [check, setCheck] = React.useState(false)
   const [savedFilms, setSavedFilms] = React.useState([])
-
   const [film, setFilm] = React.useState('')
   const [textErr, setTextErr] = React.useState('')
 
@@ -51,15 +50,17 @@ function Movies() {
       setTextErr(infoSearchNotInfo)
       setClose(true)
       setCards([])
-    } else {
+    } else if (localStorage.allFilms === undefined) {
       setTextErr('')
       moviesApi.getContent()
         .then((obj) => {
           setClose(true)
           setFullCards(filter.filter(obj, film, false))
           setCards(filter.filter(obj, film, check))
+          localStorage.setItem('check', check)
           localStorage.setItem('film', film)
           localStorage.setItem('cards', JSON.stringify(filter.filter(obj, film, check)))
+          localStorage.setItem('allFilms', JSON.stringify(obj))
           if (filter.filter(obj, film, check).length === 0) { // найдено хоть что то или нет
             setInstead(false)
           } else {
@@ -71,6 +72,18 @@ function Movies() {
           console.log('Ошибка 1: ', err)
           setTextErr(infoSearchNotConnect)
         })
+    } else if (localStorage.allFilms !== undefined) {
+      setFullCards(filter.filter(JSON.parse(localStorage.allFilms), film, false))
+      setCards(filter.filter(JSON.parse(localStorage.allFilms), film, check))
+      localStorage.setItem('check', check)
+      localStorage.setItem('film', film)
+      localStorage.setItem('cards', JSON.stringify(filter.filter(JSON.parse(localStorage.allFilms), film, check)))
+      setClose(true)
+      if (filter.filter(JSON.parse(localStorage.allFilms), film, check).length === 0) { // найдено хоть что то или нет
+        setInstead(false)
+      } else {
+        setInstead(true)
+      }
     }
   }
 
@@ -85,7 +98,6 @@ function Movies() {
           check={check}
           close={close}
           fullCards={fullCards}
-          setFullCards={setFullCards}
 
           handleSearch={handleSearch}
 
@@ -110,7 +122,6 @@ function Movies() {
         typePageMovies={true}
         savedFilms={savedFilms}
         setSavedFilms={setSavedFilms}
-        updateSaved={updateSavedFilms}
       />
     </>
   )

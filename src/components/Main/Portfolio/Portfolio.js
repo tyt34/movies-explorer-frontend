@@ -34,7 +34,7 @@ function Portfolio() {
             Одностраничное приложение
           </p>
           <p className="portfolio__arrow">
-            <a href="http://good.nomoredomains.work/sign-in" className="portfolio__forward">
+            <a href="https://github.com/tyt34/react-mesto-api-full" className="portfolio__forward">
               ↗
             </a>
           </p>

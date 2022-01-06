@@ -1,8 +1,12 @@
 import React from 'react'
 import './MoviesCard.css'
+import {
+  numFirstDot
+} from '../../../utils/constants.js'
 
 function MoviesCard(props) {
   const [isLike, setIsLike] = React.useState('')
+  const [endWord, setEndWord] = React.useState(numFirstDot)
 
   React.useEffect( () => {
     function getLike() {
@@ -12,6 +16,15 @@ function MoviesCard(props) {
     }
     setIsLike(getLike())
   }, [props.savedFilms])
+
+  React.useEffect( () => {
+    for (let w=numFirstDot; w<props.title.length; w++) {
+      if (props.title[w] === '.') {
+        setEndWord(w+1)
+        return
+      }
+    }
+  }, [])
 
   let isLiked = props.savedFilms.some((i) => {
     return i.movieId === props.num
@@ -41,8 +54,9 @@ function MoviesCard(props) {
       <section className="card">
         <img
           className="card__img"
-          alt="логотип"
+          alt='Постер фильма'
           src={props.img}
+          title={props.title.substr(0, endWord)}
           onClick={relocateOnTrailer}
         />
         <div className="card__panel">

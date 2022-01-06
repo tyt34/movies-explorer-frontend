@@ -1,11 +1,17 @@
 import {
   pageWithImgs
 } from './constants.js'
-const url = 'https://submarine.nomoredomains.work/'
+let url
 const movies = 'movies'
 const signup = 'signup'
 const signin = 'signin'
 const get = 'users/me'
+
+if (process.env.REACT_APP_ENV === undefined) {
+  url = 'http://localhost:3001/'
+} else {
+  url = process.env.REACT_APP_ENV
+}
 
 function getResponseData(res) {
     if (!res.ok) {
