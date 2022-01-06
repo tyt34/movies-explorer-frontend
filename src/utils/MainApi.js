@@ -87,7 +87,6 @@ export const getSavedFilms = () => {
 }
 
 export const regg = (name, email, pass) => {
-  console.log('r -> ', url+signup);
   return fetch(url+signup, {
     method: 'POST',
     headers: {
@@ -127,7 +126,6 @@ export const auth = (email, pass) => {
 }
 
 export const getUser = () => {
-  console.log('1 -> ', url+get);
   return fetch(url+get, {
     method: 'GET',
     headers: {

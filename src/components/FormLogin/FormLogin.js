@@ -80,7 +80,7 @@ function FormLogin(props) {
     })
     .catch(
       (err) => {
-        console.log(err)
+        console.log('Err#2 ',err)
         setValidErr(err.message)
       }
     )

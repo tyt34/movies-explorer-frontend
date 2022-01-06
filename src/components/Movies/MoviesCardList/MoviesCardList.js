@@ -142,7 +142,7 @@ function MoviesCardList(props) {
       })
       .catch(
         (err) => {
-          console.log('1 Ошибка ===> ', err)
+          console.log('Err#7 ',err)
         }
       )
     } else { /////////////////////////////////////////// movies
@@ -156,7 +156,7 @@ function MoviesCardList(props) {
         })
         .catch(
           (err) => {
-            console.log('1 Ошибка ===> ', err)
+            console.log('Err#8 ',err)
           }
         )
       } else if (!isLike) {
@@ -174,7 +174,7 @@ function MoviesCardList(props) {
         })
         .catch(
           (err) => {
-            console.log('2 Ошибка ===> ', err)
+            console.log('Err#9 ',err)
           }
         )
       }

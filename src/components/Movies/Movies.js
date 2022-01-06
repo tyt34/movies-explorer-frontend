@@ -38,7 +38,7 @@ function Movies() {
     })
     .catch(
       (err) => {
-        console.log('1 Ошибка ===> ', err)
+        console.log('Err#5 ',err)
       }
     )
   }
@@ -69,7 +69,7 @@ function Movies() {
         })
         .catch( err => {
           setClose(true)
-          console.log('Ошибка 1: ', err)
+          console.log('Err#6 ',err)
           setTextErr(infoSearchNotConnect)
         })
     } else if (localStorage.allFilms !== undefined) {
@@ -122,6 +122,7 @@ function Movies() {
         typePageMovies={true}
         savedFilms={savedFilms}
         setSavedFilms={setSavedFilms}
+        updateSaved={updateSavedFilms}
       />
     </>
   )

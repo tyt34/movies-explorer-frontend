@@ -57,12 +57,11 @@ function SavedMovies() {
   function updateFilms() {
     api.getSavedFilms()
     .then( (res) => {
-      console.log(res.data);
       setCardsSave(res.data)
     })
     .catch(
       (err) => {
-        console.log('1 Ошибка ===> ', err)
+        console.log('Err#11 ',err)
       }
     )
   }
@@ -75,7 +74,7 @@ function SavedMovies() {
     })
     .catch(
       (err) => {
-        console.log('1 Ошибка ===> ', err)
+        console.log('Err#12 ',err)
       }
     )
   }

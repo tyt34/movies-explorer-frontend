@@ -106,7 +106,7 @@ function FormRegister(props) {
         })
         .catch(
           (err) => {
-            console.log(err)
+            console.log('Err#3 ',err)
           }
         )
       }

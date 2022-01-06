@@ -127,7 +127,7 @@ function Profile(props) {
     )
     .catch(
       (err) => {
-        console.log(err)
+        console.log('Err#10 ',err)
         if (err.message === 'Validation failed') {
           setEmailError(infoAboutErEmail)
         } else {

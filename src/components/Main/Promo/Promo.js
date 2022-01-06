@@ -17,7 +17,7 @@ function Promo(props) {
       }
     )
     .catch( (err) => {
-      console.log('err -> ', err)
+      console.log('Err#4 ',err)
     })
   }, [])
 
