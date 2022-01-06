@@ -41,7 +41,7 @@ function App() {
       }
     )
     .catch( (err) => {
-      console.log('err -> ', err)
+      console.log('1 err -> ', err)
     })
   }, [])
 
