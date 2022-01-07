@@ -10,6 +10,8 @@ function Filter(props) {
         <CheckBox
           check={props.check}
           setCheck={props.setCheck}
+          checkSaved={props.checkSaved}
+          setCheckSaved={props.setCheckSaved}
         />
       </div>
     </>

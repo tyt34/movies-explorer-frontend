@@ -24,12 +24,14 @@ function Movies() {
   const [textErr, setTextErr] = React.useState('')
 
   React.useEffect( () => {
+    if (localStorage.check === 'true') {
+      setCheck(true)
+    }
+    if (localStorage.check === 'false') {
+      setCheck(false)
+    }
     updateSavedFilms()
   },[])
-
-  React.useEffect( () => {
-    updateSavedFilms()
-  },[check])
 
   function updateSavedFilms() {
     api.getSavedFilms()

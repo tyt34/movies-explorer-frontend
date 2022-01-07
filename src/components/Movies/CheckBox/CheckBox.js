@@ -2,8 +2,15 @@ import React from 'react'
 import './CheckBox.css'
 
 function CheckBox(props) {
+  const nowUrl = window.location.href.split('/')
+
   function handleCheck(e) {
-    props.setCheck(!props.check)
+    if (nowUrl[nowUrl.length-1] === 'saved-movies') { // saved-movies
+      props.setCheckSaved(!props.checkSaved)
+    } else { ////////////////////////////////////////// movies
+      props.setCheck(!props.check)
+      localStorage.setItem('check', !props.check)
+    }
   }
 
   return (

@@ -18,7 +18,7 @@ function SavedMovies() {
 
   const [close, setClose] = React.useState(true)
   const [instead, setInstead] = React.useState(true)
-  const [check, setCheck] = React.useState(false)
+  const [checkSaved, setCheckSaved] = React.useState(false)
 
   const [film, setFilm] = React.useState('')
   const [textErr, setTextErr] = React.useState('')
@@ -37,8 +37,8 @@ function SavedMovies() {
     } else {
       setTextErr('')
       setClose(true)
-      setFindCard(filter.filter(cardsSave, film, check))
-      if (filter.filter(cardsSave, film, check).length === 0) { // найдено хоть что то или нет
+      setFindCard(filter.filter(cardsSave, film, checkSaved))
+      if (filter.filter(cardsSave, film, checkSaved).length === 0) { // найдено хоть что то или нет
         setInstead(false)
       } else {
         setInstead(true)
@@ -47,12 +47,12 @@ function SavedMovies() {
   }
 
   React.useEffect( () => {
-    if (check) {
-      setFindCard(filter.filter(cardsSave, film, check))
+    if (checkSaved) {
+      setFindCard(filter.filter(cardsSave, film, checkSaved))
     } else {
       updateSavedFilms()
     }
-  }, [check])
+  }, [checkSaved])
 
   function updateFilms() {
     api.getSavedFilms()
@@ -87,7 +87,7 @@ function SavedMovies() {
           setCards={setCardsSave}
           setClose={setClose}
           setInstead={setInstead}
-          check={check}
+          check={checkSaved}
           close={close}
           fullCards={cardsSave}
           setFullCards={setCardsSave}
@@ -99,8 +99,8 @@ function SavedMovies() {
           textErr={textErr}
         />
         <Filter
-          check={check}
-          setCheck={setCheck}
+          checkSaved={checkSaved}
+          setCheckSaved={setCheckSaved}
         />
       </div>
       <Preloader
@@ -115,7 +115,7 @@ function SavedMovies() {
         setCards={setCardsSave}
         savedFilms={cardsSave}
         setFindCard={setFindCard}
-        check={check}
+        check={checkSaved}
       />
     </>
   )

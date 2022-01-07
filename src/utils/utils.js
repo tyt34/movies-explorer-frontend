@@ -10,7 +10,13 @@ function filter(obj, text, check) {
 
 function addOrNot(obj, text, arr, check) {
   let needDuration
-  if (check) {
+  if (check === 'true') {
+    check = true
+  }
+  if (check === 'false') {
+    check = false
+  }
+  if (check === true) {
     needDuration = constants.duraShortFilm
   } else {
     needDuration = Infinity // бесконечность
