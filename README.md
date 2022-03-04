@@ -32,6 +32,7 @@
 * Можно искать только короткометражные фильма (меньше 40 минут).
 
 [Ссылка на макет в Figma](https://www.figma.com/file/cASM20ikAsPlTi2doec68Q/Diploma?node-id=932%3A3320).
+
 [Ссылка на backend приложения](https://github.com/tyt34/movies-explorer-api)
 
 ## Запуск приложения
