@@ -38,3 +38,4 @@
 1. npm i
 2. npm start
 
+- Не забудьте запустить backend часть, которая находится [по этой ссылке](https://github.com/tyt34/movies-explorer-api). 
