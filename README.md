@@ -16,7 +16,8 @@
     - редактирование профиля;
  - Frontend написан на React.JS. React-router-dom v6.
  - Локальные данные на стороне пользователя хранятся в *localStorage*.
- - Данные с фильмами находятся по ссылке https://api.nomoreparties.co/beatfilm-movies
+ - Данные с фильмами находятся по ссылке https://api.nomoreparties.co/beatfilm-movies.
+ - Это frontend часть приложения "Поиск фильмов". Backend часть приложения находится [по этой ссылке](https://github.com/tyt34/movies-explorer-api). 
 
 ## Функциональность
 
@@ -32,8 +33,6 @@
 * Можно искать только короткометражные фильма (меньше 40 минут).
 
 [Ссылка на макет в Figma](https://www.figma.com/file/cASM20ikAsPlTi2doec68Q/Diploma?node-id=932%3A3320).
-
-[Ссылка на backend приложения](https://github.com/tyt34/movies-explorer-api)
 
 ## Запуск приложения
 1. npm i
