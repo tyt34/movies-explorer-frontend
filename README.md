@@ -32,10 +32,14 @@
 * При вводе некорректных данных выводится сообщение поясняющая ошибку. 
 * Можно искать только короткометражные фильма (меньше 40 минут).
 
-[Ссылка на макет в Figma](https://www.figma.com/file/cASM20ikAsPlTi2doec68Q/Diploma?node-id=932%3A3320).
-
 ## Запуск приложения
 1. npm i
 2. npm start
 
 - Не забудьте запустить backend часть, которая находится [по этой ссылке](https://github.com/tyt34/movies-explorer-api). 
+
+<tr>
+    <hr>
+</tr>
+
+[Ссылка на макет в Figma](https://www.figma.com/file/cASM20ikAsPlTi2doec68Q/Diploma?node-id=932%3A3320).
