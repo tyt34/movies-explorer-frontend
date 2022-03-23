@@ -1,6 +1,11 @@
+import React from 'react'
 import './Footer.css'
+let renCount = 0
 
 function Footer() {
+  //renCount = renCount+1
+  //console.log(` render footer  ${++renCount}`)
+
   return (
     <>
       <section className="footer">
@@ -26,8 +31,8 @@ function Footer() {
         </div>
       </section>
     </>
-
   )
 }
 
-export default Footer
+export default React.memo(Footer)
+//export default (Footer)
