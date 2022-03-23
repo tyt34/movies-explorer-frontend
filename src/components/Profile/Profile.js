@@ -165,42 +165,22 @@ function Profile(props) {
           name="profile"
           onSubmit={onSubmit}
         >
-          <div className="profile__field">
-            <p className="profile__name">
-              Имя
-            </p>
-            <input
-              value={nameInput}
-              onChange={handleChangeName}
-              id="profile-name"
-              className="profile__input"
-              name="name"
-              type="text"
-              placeholder="Имя пользователя"
-              minLength="2"
-              maxLength="30"
-              required
-            />
-          </div>
+          <Field
+            name='имя'
+            value={nameInput}
+            setValue={setNameInput}
+            onChange={handleChangeName}
+          />
 
           <div className="profile__line">
           </div>
 
-          <div className="profile__field">
-            <p className="profile__name">
-              E-mail
-            </p>
-            <input
-              value={emailInput}
-              onChange={handleChangeEmail}
-              id="profile-email"
-              className="profile__input"
-              name="email"
-              type="email"
-              placeholder="Электронная почта пользователя"
-              required
-            />
-          </div>
+          <Field
+            name='E-mail'
+            value={emailInput}
+            setValue={setEmailInput}
+            onChange={handleChangeEmail}
+          />
 
           <p className="profile__error-button">
             {buttonError}
@@ -231,143 +211,3 @@ function Profile(props) {
 }
 
 export default Profile
-
-/*
-<>
-  <section className="profile">
-    <p className="profile__main">
-      Привет, {name}!
-    </p>
-
-    <form
-      className="profile__form"
-      name="profile"
-      onSubmit={onSubmit}
-    >
-      <div className="profile__field">
-        <p className="profile__name">
-          Имя
-        </p>
-        <input
-          value={nameInput}
-          onChange={handleChangeName}
-          id="profile-name"
-          className="profile__input"
-          name="name"
-          type="text"
-          placeholder="Имя пользователя"
-          minLength="2"
-          maxLength="30"
-          required
-        />
-      </div>
-
-      <div className="profile__line">
-      </div>
-
-      <div className="profile__field">
-        <p className="profile__name">
-          E-mail
-        </p>
-        <input
-          value={emailInput}
-          onChange={handleChangeEmail}
-          id="profile-email"
-          className="profile__input"
-          name="email"
-          type="email"
-          placeholder="Электронная почта пользователя"
-          required
-        />
-      </div>
-
-      <p className="profile__error-button">
-        {buttonError}
-      </p>
-      <button
-        id="profile-save"
-        className={ button ? 'profile__save' : 'profile__save profile_close'}
-        type="submit"
-        disabled={ button ? '' : 'disabled'}
-      >
-        Редактировать
-      </button>
-      <button
-        id="profile-exit"
-        className="profile__exit"
-        type="submit"
-        onClick={handleSaveAll}
-      >
-        Выйти из аккаунты
-      </button>
-      <p className="profile__succes">
-        {testSuccess}
-      </p>
-    </form>
-  </section>
-</>
-*/
-
-/*
-<>
-  <section className="profile">
-    <p className="profile__main">
-      Привет, {name}!
-    </p>
-
-    <form
-      className="profile__form"
-      name="profile"
-      onSubmit={onSubmit}
-    >
-      <Field
-        name='имя'
-        value={nameInput}
-        onChange={handleChangeName}
-      />
-
-      <div className="profile__line">
-      </div>
-
-      <div className="profile__field">
-        <p className="profile__name">
-          E-mail
-        </p>
-        <input
-          value={emailInput}
-          onChange={handleChangeEmail}
-          id="profile-email"
-          className="profile__input"
-          name="email"
-          type="email"
-          placeholder="Электронная почта пользователя"
-          required
-        />
-      </div>
-
-      <p className="profile__error-button">
-        {buttonError}
-      </p>
-      <button
-        id="profile-save"
-        className={ button ? 'profile__save' : 'profile__save profile_close'}
-        type="submit"
-        disabled={ button ? '' : 'disabled'}
-      >
-        Редактировать
-      </button>
-      <button
-        id="profile-exit"
-        className="profile__exit"
-        type="submit"
-        onClick={handleSaveAll}
-      >
-        Выйти из аккаунты
-      </button>
-      <p className="profile__succes">
-        {testSuccess}
-      </p>
-    </form>
-  </section>
-</>
-*/

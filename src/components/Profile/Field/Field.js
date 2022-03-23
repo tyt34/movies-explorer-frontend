@@ -1,26 +1,23 @@
 import React from 'react'
-//import './Footer.css'
-let renCount = 0
+import CurrentUserContext from "../../../contexts/CurrentUserContext";
+let renCount = 0.5
 
 function Field(props) {
-  console.log(props)
+  const currenUser = React.useContext(CurrentUserContext)
 
-  //renCount = renCount+1
-  console.log(' render field', props.name,  ++renCount)
+  renCount = renCount + 0.5
 
-  React.useEffect( () => {
-    //props.setNameInput(currenUser.name)
-  }, [])
+  console.log(' render field', props.name,  renCount)
 
   return (
     <>
     <div className="profile__field">
       <p className="profile__name">
-        Имя
+        {props.name}
       </p>
       <input
-        value={props.nameInput}
-        onChange={props.handleChangeName}
+        value={props.value}
+        onChange={props.onChange}
         id="profile-name"
         className="profile__input"
         name="name"
@@ -35,5 +32,10 @@ function Field(props) {
   )
 }
 
-export default Field
-//export default (Footer)
+export default React.memo(Field, (prev, next) => {
+  if (prev.value != next.value) {
+    return false
+  } else {
+    return true
+  }
+})
