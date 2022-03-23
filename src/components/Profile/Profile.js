@@ -15,6 +15,8 @@ import {
 } from '../../utils/constants.js'
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
+let ren = 0.5
+
 function Profile(props) {
   const navigate = useNavigate()
   const [button, setButton] = React.useState(false)
@@ -153,11 +155,26 @@ function Profile(props) {
     navigate('/')
   }
 
+  /*
+  // 1 - допусти строку привет имя мы получали через функцию, которая избыточно перерисовывалась
+  function getName() {
+    ren = ren + 0.5
+    console.log(' num ren ', ren)
+    return `Привет, ${name}!`
+  }
+  */
+  // 2 - используя хук юзмемо данная функция будет вызываться только когда изменется name
+  const getName = React.useMemo( () => {
+    ren = ren + 0.5
+    console.log(' render - Привет <Имя> ', ren)
+    return `Привет, ${name}!`
+  }, [name])
+
   return (
     <>
       <section className="profile">
         <p className="profile__main">
-          Привет, {name}!
+          {getName}
         </p>
 
         <form
